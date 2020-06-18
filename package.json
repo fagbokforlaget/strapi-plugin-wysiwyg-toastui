@@ -1,5 +1,5 @@
 {
-  "name": "strapi-plugin-wysiwyg-toastui",
+  "name": "@forlagshuset/strapi-plugin-wysiwyg-toastui",
   "version": "0.1.0",
   "description": "Wysiwyg editor using toastui library.",
   "strapi": {
