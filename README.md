@@ -16,6 +16,8 @@ yarn add strapi-plugin-wysiwyg-toastui
 
 Media insert done by media library plugin
 
+![Screenshot](editor.png)
+
 ## License
 MIT License
 Copyright (c) 2020 Fagbokforlaget V&B AS
