@@ -1,0 +1,30 @@
+{
+  "name": "strapi-plugin-strapi-plugin-wysiwyg-toastui",
+  "version": "0.0.0",
+  "description": "Wysiwyg editor using toastui library.",
+  "strapi": {
+    "name": "strapi-plugin-wysiwyg-toastui",
+    "icon": "plug",
+    "description": "Wysiwyg editor using toastui library."
+  },
+  "dependencies": {
+    "@toast-ui/react-editor": "^2.1.2"
+  },
+  "author": {
+    "name": "Rakesh Kumar Shardiwal",
+    "email": "rakesh.kumar.shardiwal@forlagshuset.no",
+    "url": "https://www.fagbokforlaget.no/"
+  },
+  "maintainers": [
+    {
+      "name": "Rakesh Kumar Shardiwal",
+      "email": "rakesh.kumar.shardiwal@forlagshuset.no",
+      "url": ""
+    }
+  ],
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
