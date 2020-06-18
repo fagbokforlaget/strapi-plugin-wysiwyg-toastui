@@ -4,9 +4,10 @@ This plugin replaces strapi wysiwyg draft editor with toastui editor.
 
 ## Installation
 ```
-npm i --save @forlagshuset/strapi-plugin-wysiwyg-toastui
+npm i --save strapi-plugin-wysiwyg-toastui
 or
-yarn add @forlagshuset/strapi-plugin-wysiwyg-toastui
+yarn add strapi-plugin-wysiwyg-toastui
+
 ```
 ## Features
 
