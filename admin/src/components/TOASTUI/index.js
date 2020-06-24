@@ -54,9 +54,15 @@ class TOIEditor extends React.Component {
       let image = `![${data.caption}](${data.url})`;
       this.editorRef.current.getInstance().insertText(image);
     }
-    if (data.mime.includes('video')) {
-      let video = `[![${data.name}](${data.previewUrl})](${data.url})`;
+    else if (data.mime.includes('video') || data.mime.includes('audio') ) {
+      let preview_url = data.previewUrl ? data.previewUrl : 'https://i.stack.imgur.com/PtbGQ.png';
+      let video = `[![${data.name}](${preview_url})](${data.url})`;
       this.editorRef.current.getInstance().insertText(video);
+    }
+    else {
+      let preview_url = data.previewUrl ? data.previewUrl : 'https://cdn4.iconfinder.com/data/icons/software-menu-icons/256/SoftwareIcons-21-512.png';
+      let file = `[![${data.name}](${preview_url})](${data.url})`;
+      this.editorRef.current.getInstance().insertText(file);
     }
   };
 
