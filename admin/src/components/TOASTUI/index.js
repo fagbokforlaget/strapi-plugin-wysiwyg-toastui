@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import '@toast-ui/editor/dist/toastui-editor.css';
+import 'codemirror/lib/codemirror.css';
 import { Editor } from '@toast-ui/react-editor';
 import { Button } from '@buffetjs/core';
 
@@ -70,6 +71,7 @@ class TOIEditor extends React.Component {
           initialEditType={this.initialEditType}
           initialValue={this.props.value}
           ref={this.editorRef}
+          usageStatistics={false}
           onChange={(event) => {
             this.props.onChange({
               target: {
