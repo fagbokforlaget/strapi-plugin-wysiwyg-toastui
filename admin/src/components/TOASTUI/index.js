@@ -50,19 +50,12 @@ class TOIEditor extends React.Component {
 
   handleChange = data => {
     let value = this.props.value;
+    let editor_instance = this.editorRef.current.getInstance();
     if (data.mime.includes('image')) {
-      let image = `![${data.caption}](${data.url})`;
-      this.editorRef.current.getInstance().insertText(image);
-    }
-    else if (data.mime.includes('video') || data.mime.includes('audio') ) {
-      let preview_url = data.previewUrl ? data.previewUrl : 'https://i.stack.imgur.com/PtbGQ.png';
-      let video = `[![${data.name}](${preview_url})](${data.url})`;
-      this.editorRef.current.getInstance().insertText(video);
+      editor_instance.exec('AddImage', { 'altText': data.caption, 'imageUrl': data.url } );
     }
     else {
-      let preview_url = data.previewUrl ? data.previewUrl : 'https://cdn4.iconfinder.com/data/icons/software-menu-icons/256/SoftwareIcons-21-512.png';
-      let file = `[![${data.name}](${preview_url})](${data.url})`;
-      this.editorRef.current.getInstance().insertText(file);
+      editor_instance.exec('AddLink', { 'linkText': data.name, 'url': data.url } );
     }
   };
 
