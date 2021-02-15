@@ -20,6 +20,17 @@ class TOIEditor extends React.Component {
     this.handleToggle = this.handleToggle.bind(this);
   }
 
+  componentWillReceiveProps = (nextProps) => {
+    // It seems that Strapi sets the value property after the editor was initialized,
+    // this rendering initialValue useless, and proper value never making it into 
+    // the component. Instead, we are setting the value manually, but only on the first 
+    // update.
+    if (nextProps.value !== this.props.value && this.props.value == null) {
+      const editor = this.editorRef.current.getInstance();
+      editor.setMarkdown(nextProps.value, false);
+    }
+  }
+
   componentDidMount() {
     const editor = this.editorRef.current.getInstance();
     const toolbar = editor.getUI().getToolbar();
