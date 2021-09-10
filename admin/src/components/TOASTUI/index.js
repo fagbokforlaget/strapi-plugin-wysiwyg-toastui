@@ -16,7 +16,7 @@ class TOIEditor extends React.Component {
     this.height = "400px";
     this.initialEditType = "markdown";
     this.previewStyle = "vertical";
-    this.state = { isOpen: false };
+    this.state = { isOpen : false };
     this.handleToggle = this.handleToggle.bind(this);
   }
 
@@ -27,7 +27,7 @@ class TOIEditor extends React.Component {
     editor.eventManager.addEventType('insertMediaButton');
     editor.eventManager.listen('insertMediaButton', () => {
       this.handleToggle();
-    });
+    } );
 
     toolbar.insertItem(0, {
       type: 'button',
@@ -40,16 +40,16 @@ class TOIEditor extends React.Component {
     });
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate() {
     if (this.props.value !== prevProps.value && prevProps.value == null) {
       const editor = this.editorRef.current.getInstance();
       editor.setMarkdown(this.props.value, false);
     }
     // Bug fix, where switch button become submit type - editor bug
     const elements = document.getElementsByClassName('te-switch-button');
-    if (elements.length) {
-      elements[0].setAttribute('type', 'button');
-      elements[1].setAttribute('type', 'button');
+    if ( elements.length ) {
+      elements[0].setAttribute('type','button');
+      elements[1].setAttribute('type','button');
     }
   }
 
@@ -57,14 +57,14 @@ class TOIEditor extends React.Component {
     let value = this.props.value;
     let editor_instance = this.editorRef.current.getInstance();
     if (data.mime.includes('image')) {
-      editor_instance.exec('AddImage', { 'altText': data.caption, 'imageUrl': data.url });
+      editor_instance.exec('AddImage', { 'altText': data.caption, 'imageUrl': data.url } );
     }
     else {
-      editor_instance.exec('AddLink', { 'linkText': data.name, 'url': data.url });
+      editor_instance.exec('AddLink', { 'linkText': data.name, 'url': data.url } );
     }
   };
 
-  handleToggle = () => this.setState({ isOpen: !this.state.isOpen });
+  handleToggle = () => this.setState({ isOpen : !this.state.isOpen });
 
   render() {
     return (
@@ -109,7 +109,7 @@ class TOIEditor extends React.Component {
           ]}
         />
 
-        <MediaLib onToggle={this.handleToggle} isOpen={this.state.isOpen} onChange={this.handleChange} />
+        <MediaLib onToggle={this.handleToggle} isOpen={this.state.isOpen} onChange={this.handleChange}/>
       </>
     );
   }
