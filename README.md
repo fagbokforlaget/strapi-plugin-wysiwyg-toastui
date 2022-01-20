@@ -1,3 +1,4 @@
+# !!! THIS PROJECT IS UNMAINTAINED !!!
 # Strapi plugin strapi-plugin-wysiwyg-toastui
 
 This plugin replaces strapi wysiwyg draft editor with toastui editor.
